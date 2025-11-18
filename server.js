@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 // ⚠️ Hard-coded fake secret for testing AI detection
 const API_SECRET = "FAKE_TEST_TOKEN_ABC123456789";
-
+//question-should we update the port?
 var HTTP_PORT = 8000
 
 // Start server
