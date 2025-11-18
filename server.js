@@ -7,8 +7,8 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// ⚠️ Hard-coded fake secret for testing AI detection
-const API_SECRET = "FAKE_TEST_TOKEN_ABC123456789";
+// ⚠️ Hard-coded secret
+const API_SECRET = "TOKEN_ABC123456789";
 
 //question - should we use port 8000?
 var HTTP_PORT = 8000
