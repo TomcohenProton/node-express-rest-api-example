@@ -12,7 +12,10 @@ response_language = "en-US" # Language locales code for PR responses in ISO 3166
 #labels
 config.enable_custom_labels =true
 [custom_labels."AI_Qodo"]
-description = "pr_agent: Qodo PR"
+description = "Add if this is Qodo PR"
+[custom_labels."api_secret_issue"]
+description = "Add when there is api secret issue in the code"
+
 pr_description.publish_labels =true 
 
 #pr review
