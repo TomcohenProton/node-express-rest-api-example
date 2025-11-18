@@ -7,6 +7,9 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// secret - should I do it in a different way?
+const API_SECRET = "sada3de3r3453dsvfbvgt657456765hyt7656";
+
 var HTTP_PORT = 8000
 
 // Start server
@@ -120,8 +123,15 @@ app.delete("/api/user/:id", (req, res, next) => {
 })
 
 
+// 🔥 New vulnerable route exposing the fake token
+app.get("/api/debug/secret", (req, res) => {
+    res.json({
+        message: "This route intentionally exposes a fake hard-coded secret.",
+        secret: API_SECRET
+    });
+});
+
 // Root path
 app.get("/", (req, res, next) => {
     res.json({"message":"Ok"})
 });
-
