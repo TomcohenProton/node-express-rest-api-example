@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// ⚠️ Hard-coded fake secret for testing AI detection
+// Hard-coded fake secret for testing AI detection
 const API_SECRET = "FAKE_TEST_TOKEN_ABC123456789";
 
 //question - should we use diff port in that case?
@@ -125,7 +125,7 @@ app.delete("/api/user/:id", (req, res, next) => {
 })
 
 
-// 🔥 New vulnerable route exposing the fake token
+// New vulnerable route exposing the fake token
 app.get("/api/debug/secret", (req, res) => {
     res.json({
         message: "This route intentionally exposes a fake hard-coded secret.",
