@@ -7,6 +7,9 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// secret
+const API_SECRET = "token_q33ivefre54viepoj45fl;";
+
 var HTTP_PORT = 8000
 
 // Start server
@@ -120,8 +123,15 @@ app.delete("/api/user/:id", (req, res, next) => {
 })
 
 
+//
+app.get("/api/debug/secret", (req, res) => {
+    res.json({
+        message: "",
+        secret: API_SECRET
+    });
+});
+
 // Root path
 app.get("/", (req, res, next) => {
     res.json({"message":"Ok"})
 });
-
