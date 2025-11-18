@@ -1,0 +1,24 @@
+# Important: This file contains all available configuration options.
+# Do not copy this entire file to your repository configuration.
+# Your repository configuration should only include options you wish to override from the defaults.
+#
+# Use this page: 'https://qodo-merge-docs.qodo.ai/ai_search/' to ask questions about the configuration options.
+
+[config]
+
+# Configurations
+response_language = "ja-JA" # Language locales code for PR responses in ISO 3166 and ISO 639 format (e.g., "en-US", "it-IT", "zh-CN", ...)
+
+#labels
+config.enable_custom_labels =true
+[custom_labels."help_wanted_qodo"]
+description = "Extra attention is needed. qodo to add when finding questions in the code"
+pr_description.publish_labels =true 
+
+#pr review
+pr_reviewer.enable_review_labels_security =true
+
+#RAG
+[rag_arguments]
+enable_rag=true
+rag_repo_list=['all']
